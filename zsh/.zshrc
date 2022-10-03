@@ -33,3 +33,7 @@ bindkey '^[[1;5C'   forward-word          # ctrl+right
 bindkey '^[[3;5~'   delete-word           # ctrl+delete
 bindkey "^[[1~"     beginning-of-line
 bindkey "^[[4~"     end-of-line
+
+# ALIAS
+alias bm="bashmount"
+alias xclip="xclip -selection c"

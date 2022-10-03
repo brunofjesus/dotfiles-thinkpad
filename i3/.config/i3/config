@@ -50,14 +50,14 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -fn 'MesloLGS Nerd Font:pixelsize=20' -sf '#171717' -sb '#97d01a' -nb '#171717' -nf '#f8f8f8'
+bindsym $mod+d exec --no-startup-id dmenu_run -fn 'MesloLGS Nerd Font:pixelsize=20' -sf '#fdf6e3' -sb '#657b83' -nb '#fdf6e3' -nf '#657b83'
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
-bindsym $mod+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'MesloLGS Nerd Font:pixelsize=18' -sf '#171717' -sb '#97d01a' -nb '#171717' -nf '#f8f8f8'"
+bindsym $mod+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'MesloLGS Nerd Font:pixelsize=18' -sf '#fdf6e3' -sb '#657b83' -nb '#fdf6e3' -nf '#657b83'"
 
-bindsym XF86Launch1 exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'MesloLGS Nerd Font:pixelsize=18' -sf '#171717' -sb '#97d01a' -nb '#171717' -nf '#f8f8f8'"
+bindsym XF86Launch1 exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'MesloLGS Nerd Font:pixelsize=18' -sf '#fdf6e3' -sb '#657b83' -nb '#fdf6e3' -nf '#657b83'"
 
 # change focus
 bindsym $mod+h focus left
@@ -193,10 +193,13 @@ set_from_resource $green_l color2
 set_from_resource $green_d color10
 set_from_resource $yellow_l color3
 set_from_resource $yellow_d color11
+set_from_resource $blue_l color4
+set_from_resource $blue_d color12
+
 
 # class                 border	   backgr.    text  indicator child_border
-client.focused          $green_l   $green_l   $bg   $yellow_d       $green_l
-client.focused_inactive $gray   $gray   $bg   $green_d       $bg
+client.focused          $blue_l   $blue_l   $bg   $red_l       $blue_d
+client.focused_inactive $gray   $gray   $bg   $red_d       $bg
 client.unfocused        $bg      $bg    $fg  $fg   $bg
 client.urgent           $red_l      $red_l    $fg  $red_l   $bg
 #client.placeholder      $bg      $bg    $fg  $bg   $bg
@@ -218,12 +221,16 @@ bar {
 		separator $bg
 		
             # class            border  backgr.  text
-            focused_workspace  $bg    $green_l  $bg
-            active_workspace   $bg    $gray      $green_d
-            inactive_workspace $bg     $bg      $green_d
-	    urgent_workspace   $red_l    $red_l     $fg
+            focused_workspace  $bg    $blue_d  $bg
+            active_workspace   $bg    $gray      $blue_d
+            inactive_workspace $bg     $bg      $blue_d
+	    urgent_workspace   $red_l    $red_l     $bg
 	}
 }
 
+# Compositor
+exec --no-startup-id picom
+
 # Wallpaper
-exec --no-startup-id feh --bg-fill ~/.config/wallpaper/wallpaper.png
+exec --no-startup-id feh --bg-fill ~/.config/wallpaper/wallpaper.png &
+
