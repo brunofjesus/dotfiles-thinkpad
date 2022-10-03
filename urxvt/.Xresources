@@ -1,0 +1,91 @@
+! Font size
+URxvt.font: xft:MesloLGS Nerd Font Mono:size=12
+
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+!URxvt.geometry: 92x24
+URxvt.internalBorder: 4
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.urgentOnBell: true
+URxvt.depth: 24
+
+! Fix copy paste
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+!! Colorscheme Neon
+! special
+*.foreground:   #f8f8f8
+*.background:   #171717
+*.cursorColor:  #f8f8f8
+
+! black
+*.color0:       #171717
+*.color8:       #38252c
+
+! red
+*.color1:       #d81765
+*.color9:       #ff0000
+
+! green
+*.color2:       #97d01a
+*.color10:      #76b639
+
+! yellow
+*.color3:       #ffa800
+*.color11:      #e1a126
+
+! blue
+*.color4:       #16b1fb
+*.color12:      #289cd5
+
+! magenta
+*.color5:       #ff2491
+*.color13:      #ff2491
+
+! cyan
+*.color6:       #0fdcb6
+*.color14:      #0a9b81
+
+! white
+*.color7:       #ebebeb
+*.color15:      #f8f8f8
+
+
+!! Common Keybinds for Navigations
+! Scroll one line up
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+! Scroll one line down
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+URxvt.keysym.Control-Up: \033[1;5A
+URxvt.keysym.Control-Down: \033[1;5B
+! Previous word
+URxvt.keysym.Control-Right: \033[1;5C
+! Next word
+URxvt.keysym.Control-Left: \033[1;5D
+
+!! Copy Paste & Other Extensions
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select,resize-font
+URxvt.copyCommand: xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.urlLauncher: chromium
+URxvt.underlineURLs: true
+URxvt.urlButton: 1
+
+!! Home and End Keys
+URxvt.keysym.Home: \033[1~
+URxvt.keysym.End: \033[4~
+URxvt.keysym.KP_Home: \033[1~
+URxvt.keysym.KP_End:  \033[4~
