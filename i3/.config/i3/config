@@ -198,7 +198,7 @@ set_from_resource $blue_d color12
 
 
 # class                 border	   backgr.    text  indicator child_border
-client.focused          $blue_l   $blue_l   $bg   $red_l       $blue_d
+client.focused          $blue_d   $blue_d   $bg   $red_l       $blue_d
 client.focused_inactive $gray   $gray   $bg   $red_d       $bg
 client.unfocused        $bg      $bg    $fg  $fg   $bg
 client.urgent           $red_l      $red_l    $fg  $red_l   $bg
