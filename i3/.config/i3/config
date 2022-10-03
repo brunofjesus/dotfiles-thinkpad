@@ -232,5 +232,5 @@ bar {
 exec --no-startup-id picom
 
 # Wallpaper
-exec --no-startup-id feh --bg-fill ~/.config/wallpaper/wallpaper.png &
+exec --no-startup-id feh --bg-scale ~/.config/wallpaper/wallpaper.png &
 
