@@ -80,21 +80,21 @@ else:
     def color(percent):
         if percent < 10:
             # exit code 33 will turn background red
-            return config.get("color_10", "#FFFFFF")
+            return config.get("color_10", "#dc322f")
         if percent < 20:
-            return config.get("color_20", "#FF3300")
+            return config.get("color_20", "#dc322f")
         if percent < 30:
-            return config.get("color_30", "#FF6600")
+            return config.get("color_30", "#dc322f")
         if percent < 40:
-            return config.get("color_40", "#FF9900")
+            return config.get("color_40", "#d33682")
         if percent < 50:
-            return config.get("color_50", "#FFCC00")
+            return config.get("color_50", "#cb4b16")
         if percent < 60:
-            return config.get("color_60", "#FFFF00")
+            return config.get("color_60", "#93a1a1")
         if percent < 70:
-            return config.get("color_70", "#FFFF33")
+            return config.get("color_70", "#859900")
         if percent < 80:
-            return config.get("color_80", "#FFFF66")
+            return config.get("color_80", "#268bd2")
         return config.get("color_full", "#657b83")
 
     form =  '<span color="{}">{}%</span>'

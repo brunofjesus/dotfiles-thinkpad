@@ -27,6 +27,8 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+export PATH=$PATH:~/scripts
+
 bindkey '^[[3~'     delete-char           # delete key
 bindkey '^[[1;5D'   backward-word         # ctrl+left
 bindkey '^[[1;5C'   forward-word          # ctrl+right
