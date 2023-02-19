@@ -50,7 +50,7 @@ URxvt.font: xft:JetBrainsMonoNL Nerd Font Mono:style=Regular:size=10
 
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
-URxvt.geometry: 100x20
+URxvt.geometry: 80x30
 URxvt.internalBorder: 4
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
