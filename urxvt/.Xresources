@@ -36,12 +36,21 @@
 *.color15:      #f8f8f8
 !! / End colorscheme
 
+! Screen
+Xft.dpi: 120
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
 ! Font size
-URxvt.font: xft:JetBrainsMonoNL Nerd Font Mono:style=Regular:size=12
+URxvt.font: xft:JetBrainsMonoNL Nerd Font Mono:style=Regular:size=10
 
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
-URxvt.geometry: 400x400
+URxvt.geometry: 100x20
 URxvt.internalBorder: 4
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
