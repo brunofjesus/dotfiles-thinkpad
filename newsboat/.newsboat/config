@@ -6,7 +6,7 @@ max-items 50
 
 # external browser
 browser "/usr/bin/firefox %u"
-macro l set browser "/usr/bin/mpv %u"; open-in-browser ; set browser "/usr/bin/firefox %u"
+macro v set browser "setsid -f mpv --really-quiet --no-terminal" ; open-in-browser ; set browser firefox
 
 # unbind keys
 unbind-key ENTER

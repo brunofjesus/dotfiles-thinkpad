@@ -60,7 +60,8 @@ bindsym $mod+d exec --no-startup-id dmenu_run -fn 'MesloLGS Nerd Font:pixelsize=
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 bindsym $mod+space exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'MesloLGS Nerd Font:pixelsize=18' -sf '#fdf6e3' -sb '#657b83' -nb '#171717' -nf '#f8f8f8'"
 
-bindsym XF86Launch1 exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -fn 'MesloLGS Nerd Font:pixelsize=18' -sf '#fdf6e3' -sb '#657b83' -nb '#fdf6e3' -nf '#657b83'"
+# MPV YT
+bindsym $mod+y exec mpv `dmenu -fn 'MesloLGS Nerd Font:pixelsize=18' -nb '#171717' -nf '#f8f8f8' < /dev/null`
 
 # change focus
 bindsym $mod+h focus left
@@ -227,21 +228,21 @@ client.background $bg
 bar {
 	font pango:MesloLGS Nerd Font 10
 
-		status_command i3blocks -c ~/.config/i3/i3blocks.conf
+	status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
-		position top
+	position top
 
-		colors {
-			background $bg
-			statusline $fg3
-			separator $bg
+	colors {
+		background $bg
+		statusline $fg3
+		separator $bg
 
-#			class		border	backgr	text
-			focused_workspace  $bg	$blue_d	$bg
-			active_workspace   $bg  #565656	$blue_d
-			inactive_workspace $bg	$bg	$blue_d
-			urgent_workspace   $red_l	$red_l	$bg
-		}
+#		class		border	backgr	text
+		focused_workspace  $bg	$blue_d	$bg
+		active_workspace   $bg  #565656	$blue_d
+		inactive_workspace $bg	$bg	$blue_d
+		urgent_workspace   $red_l	$red_l	$bg
+	}
 }
 
 # Compositor
