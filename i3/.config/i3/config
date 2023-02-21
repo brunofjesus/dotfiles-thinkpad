@@ -18,6 +18,10 @@ font pango:MesloLGS Nerd Font 10
 # Remove window header
 new_window 1pixel
 
+# Gaps
+gaps outer 0
+gaps inner 0
+
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
@@ -199,6 +203,20 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+set $mode_gaps [d] outer - [f] outer + [j] inner - [k] inner +
+mode "$mode_gaps" {
+	bindsym d gaps outer current minus 5
+	bindsym f gaps outer current plus 5
+	bindsym j gaps inner current minus 5
+	bindsym k gaps inner current plus 5
+
+# back to normal: Enter or Escape or $mod+r
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+z mode "default"
+}
+bindsym $mod+z mode "$mode_gaps"
+
 # Colors
 set_from_resource $bg  background
 set_from_resource $fg  foreground
@@ -249,7 +267,7 @@ bar {
 exec --no-startup-id picom
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale ~/.config/wallpaper/wallpaper.jpg &
+exec --no-startup-id ~/.config/wallpaper/apply-wallpaper.sh &
 
 # Startup applications
 exec --no-startup-id dex --autostart --environment i3
