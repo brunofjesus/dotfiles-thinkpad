@@ -6,7 +6,7 @@ max-items 50
 
 # external browser
 browser "/usr/bin/firefox %u"
-macro v set browser "setsid -f umpv --keep-open=yes %u > /dev/null 2>&1" ; open-in-browser ; set browser firefox
+macro v set browser "setsid -f umpv %u > /dev/null 2>&1" ; open-in-browser ; set browser firefox
 
 # unbind keys
 unbind-key ENTER
