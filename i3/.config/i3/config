@@ -26,9 +26,9 @@ gaps inner 0
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+bindsym $mod+Home exec --no-startup-id ./.screenlayout/docked.sh
+bindsym $mod+Shift+Home exec --no-startup-id ./.screenlayout/docked-left-lowres.sh
+bindsym $mod+End exec --no-startup-id ./.screenlayout/laptop-lowres.sh
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -57,7 +57,7 @@ bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -fn 'MesloLGS Nerd Font:pixelsize=20' -sf '#fdf6e3' -sb '#657b83' -nb '#171717' -nf '#f8f8f8'
+bindsym $mod+d exec --no-startup-id dmenu_run -fn 'MesloLGS Nerd Font:pixelsize=18' -sf '#fdf6e3' -sb '#657b83' -nb '#171717' -nf '#f8f8f8'
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -163,17 +163,18 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-set $mode_logout Exit: [S]uspend [L]ogout [R]estart [P]oweroff
+set $mode_logout Exit: [L]ock [S]uspend L[o]gout [R]estart [P]oweroff
 bindsym $mod+Shift+e mode "$mode_logout"
 
 mode "$mode_logout" {
-	bindsym s exec systemctl suspend
-		bindsym l exec i3-msg exit
-		bindsym r exec systemctl reboot
-		bindsym p exec systemctl poweroff
+	bindsym l exec './.config/i3/lock.sh', mode "default"
+    	bindsym s exec systemctl suspend && './.config/i3/lock.sh', mode "default"
+	bindsym o exec i3-msg exit
+	bindsym r exec systemctl reboot
+	bindsym p exec systemctl poweroff
 
-		bindsym Return mode "default"
-		bindsym Escape mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 
 # resize window (you can also use the mouse for that)
@@ -267,7 +268,7 @@ bar {
 exec --no-startup-id picom
 
 # Wallpaper
-exec --no-startup-id ~/.config/wallpaper/apply-wallpaper.sh &
+exec_always --no-startup-id ~/.config/wallpaper/apply-wallpaper.sh &
 
 # Startup applications
 exec --no-startup-id dex --autostart --environment i3
