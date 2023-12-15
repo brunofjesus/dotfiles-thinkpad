@@ -24,8 +24,9 @@ if [[ -r /usr/share/bash-completion/bash_completion ]]; then
 fi
 
 export PATH="$PATH:$HOME/go/bin"
-
+export BAT_THEME="Solarized (light)"
 export LS_COLORS="$(vivid generate ayu)"
+
 alias ls="lsd"
 
 eval "$(starship init bash)"
