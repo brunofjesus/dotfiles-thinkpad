@@ -1,0 +1,14 @@
+# https://github.com/altercation/solarized#the-values
+font=FiraCode Nerd Font 10
+background-color=#0366d6
+text-color=#ffffff
+border-color=#666666
+border-size=0
+border-radius=8
+default-timeout=5000
+icons=1
+markup=1
+padding=10
+
+[urgency=high]
+text-color=#dc322f

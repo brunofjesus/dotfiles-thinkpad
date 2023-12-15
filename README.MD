@@ -1,4 +1,4 @@
-# Dotfiles for my RPI 400
+# Dotfiles for the X230 Thinkpad
 
-**OS**: Raspberry Pi OS Lite 64-bit (Debian 11)
-**WM**: i3-wm
+**OS**: Arch Linux
+**WM**: sway

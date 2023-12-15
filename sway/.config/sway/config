@@ -1,0 +1,275 @@
+set $mod Mod4
+
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $term foot
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+# font pango:FiraCode 11, Awesome 12
+font pango:FiraCode Nerd Font 9
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec $term
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start program launcher
+#bindsym $mod+d exec wofi --allow-images --hide-scroll --show drun --lines 10 --style ~/.config/sway/wofi.css
+bindsym $mod+d exec wofi --allow-images --hide-scroll --show drun --lines 10 
+#bindsym $mod+Shift+s exec grimshot --notify copy area
+
+# change focus
+  # Move your focus around
+  bindsym $mod+$left focus left
+  bindsym $mod+$down focus down
+  bindsym $mod+$up focus up
+  bindsym $mod+$right focus right
+  # Or use $mod+[up|down|left|right]
+  bindsym $mod+Left focus left
+  bindsym $mod+Down focus down
+  bindsym $mod+Up focus up
+  bindsym $mod+Right focus right
+
+  # Move the focused window with the same, but add Shift
+  bindsym $mod+Shift+$left move left
+  bindsym $mod+Shift+$down move down
+  bindsym $mod+Shift+$up move up
+  bindsym $mod+Shift+$right move right
+  # Ditto, with arrow keys
+  bindsym $mod+Shift+Left move left
+  bindsym $mod+Shift+Down move down
+  bindsym $mod+Shift+Up move up
+  bindsym $mod+Shift+Right move right
+
+  bindsym $mod+Tab workspace back_and_forth
+  bindsym $mod+Shift+Tab move workspace to output right
+
+
+# split in horizontal orientation
+bindsym $mod+b splith
+# split in vertical orientation
+bindsym $mod+v splitv
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+set $workspace1  "1"
+set $workspace2  "2"
+set $workspace3  "3"
+set $workspace4  "4"
+set $workspace5  "5"
+set $workspace6  "6"
+set $workspace7  "7"
+set $workspace8  "8"
+set $workspace9  "9"
+set $workspace10 "0"
+
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    bindsym $mod+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+# Reload the config:
+bindsym $mod+Shift+c reload
+
+# exit sway (logs you out of your X session)
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your X session.' -b 'Yes' 'swaymsg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# GitHub based colorscheme:
+#set $base02	 #24292e
+#set $base01	 #dbe9f9
+#set $base00	 #666666
+#set $base2	 #ffffff
+#set $base3	 #d1d5da
+#
+#set $yellow  #dbab09
+#set $orange  #ffab02
+#set $red     #d73a49
+#set $magenta #f95a99
+#set $violet  #5a32a3
+#set $blue    #0366d6
+#set $cyan    #0598bc
+#set $green   #58f785
+
+# Ayu colorscheme:
+set $base02	 #323232
+set $base01	 #dbe9f9
+set $base00	 #5c6773
+set $base2	 #fafafa
+set $base3	 #d1d5da
+
+set $yellow  #ffc94a
+set $orange  #f29718
+set $red     #ff6565
+set $magenta #ffa3aa
+set $blue    #41a6d9
+set $cyan    #73d8ff
+set $green   #4dbf99
+
+
+
+default_border pixel 2
+default_floating_border normal
+titlebar_border_thickness 0
+#hide_edge_borders both
+smart_borders on
+
+# class                 border  backgr.  text    indicator child_border
+client.focused          $blue   $blue   $base2 $green    $blue
+client.focused_inactive $base2   $base2   $base00 $base2    $base00
+client.unfocused        $base2   $base2   $base00 $base2    $base2
+client.urgent           $magenta $magenta $base02 $magenta  $red
+client.background       $base00
+
+bar {
+    swaybar_command waybar
+}
+
+# Extra keybinds:
+bindsym $mod+F1 exec swaylock -f -c000000 
+bindsym $mod+F2 exec swaylock -f -c000000 && systemctl suspend
+#bindsym $mod+Shift+p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
+
+bindsym $mod+p exec wl-mirror LVDS-1
+
+# Execute this notification manager always:
+# (does stop when started twice)
+exec mako
+
+# Uncomment this if you want to set a static wallpaper:
+output "*" bg ~/.wallpaper.png fill
+
+# Disable the laptop output when the lid is closed
+#set $laptop_output eDP-1
+#bindswitch lid:on output $laptop_output disable
+#bindswitch lid:off output $laptop_output enable
+
+######################################
+# APPLICATION SPECIFIC CONFIGURATION #
+######################################
+
+# List all windows here that should have default settings:
+assign [class="firefox"]    workspace $workspace2
+assign [app_id="at.yrlf.wl_mirror"]  workspace $workspace9
+
+# Start the automount daemon:
+# Requires `udisks2` and `udiskie` to be installed:
+exec udiskie --tray --notify
+
+### Idle configuration
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 000000'
+
+# Redshift the display in the evening:
+#exec gammastep -m wayland -l 48.36:10.89
+
+# NetworkManager tray icon:
+exec nm-applet --indicator
+
+# Set gtk theme / icon theme etc. here.
+exec_always {
+    gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Light-Maia'
+}
+
+# OSD window
+exec swayosd-server
+
+# Sink volume raise
+bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume raise
+# Sink volume lower
+bindsym XF86AudioLowerVolume exec swayosd-client --output-volume lower
+# Sink volume toggle mute
+bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
+# Source volume toggle mute
+bindsym XF86AudioMicMute exec swayosd-client --input-volume mute-toggle
+
+# Capslock
+bindsym --release Caps_Lock exec swayosd-client --caps-lock
+
+# Brightness raise
+bindsym XF86MonBrightnessUp exec swayosd-client --brightness raise
+# Brightness lower
+bindsym XF86MonBrightnessDown exec swayosd-client --brightness lower
+
+include /etc/sway/config.d/*
