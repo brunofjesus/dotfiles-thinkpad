@@ -20,3 +20,27 @@ lspconfig.gopls.setup {
     }
   }
 }
+
+local function ts_organize_imports()
+  local params = {
+    command = "_typescript.organizeImports",
+    arguments = {vim.api.nvim_buf_get_name(0)},
+  }
+  vim.lsp.buf.execute_command(params)
+end
+
+lspconfig.tsserver.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  init_options = {
+    preferences = {
+      disable_suggestions = true,
+    }
+  },
+  commands = {
+    OrganizeImports = {
+      ts_organize_imports,
+      description = "Organize Imports",
+    }
+  }
+}

@@ -7,8 +7,12 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local opts = {
   sources = {
+    -- golang
     null_ls.builtins.formatting.gofumpt,
     null_ls.builtins.formatting.goimports_reviser,
+    -- js and ts
+    null_ls.builtins.diagnostics.eslint,
+    null_ls.builtins.formatting.prettier,
   },
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then

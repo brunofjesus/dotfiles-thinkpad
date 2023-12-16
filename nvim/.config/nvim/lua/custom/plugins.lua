@@ -4,6 +4,12 @@ local plugins={
     opts={
       ensure_installed = {
         "gopls",
+        "gofumpt",
+        "goimports-reviser",
+        "js-debug-adapter",
+        "typescript-language-server",
+        "eslint-lsp",
+        "prettier",
       }
     }
   },
@@ -15,8 +21,10 @@ local plugins={
     end,
   },
   {
+    -- this is deprecated
     "jose-elias-alvarez/null-ls.nvim",
-    ft = "go",
+    event = "VeryLazy",
+    --ft = "go",
     opts = function()
       return require "custom.configs.null-ls"
     end,
@@ -24,6 +32,7 @@ local plugins={
   {
     "mfussenegger/nvim-dap",
     init = function()
+      require "custom.configs.dap"
       require("core.utils").load_mappings("dap")
     end
   },
@@ -41,6 +50,8 @@ local plugins={
   },
   {
     "rcarriga/nvim-dap-ui",
+    event = "VeryLazy",
+    dependencies = "mfussenegger/nvim-dap",
     config = function ()
       local dap = require("dap")
       local dapui = require("dapui")
