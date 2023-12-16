@@ -64,11 +64,12 @@ window#waybar {
     margin-top:2px;
 }
 
-#workspaces button.focused {
-    border-color: #b8e532;
-}
 
 #workspaces button.visible {
+    border-color: #323232;
+}
+
+#workspaces button.focused {
     border-color: #41a6d9;
 }
 
