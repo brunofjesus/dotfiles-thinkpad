@@ -10,7 +10,6 @@
  * Keyframes
  * -------------------------------------------------------------------------- */
 
-
 /*
 Ayu
 background=#fafafa
@@ -40,125 +39,142 @@ bright7=#ffffff
 /* Reset all styles */
 
 * {
-    color: #323232;
-    border: 0;
-    border-radius: 0;
-    padding: 0 0;
-    font-family: FiraCode Nerd Font;
-    font-size: 15px;
-    margin-right: 5px;
-    margin-left: 5px;
-    padding-bottom:3px;
-   }
+  color: #323232;
+  border: 0;
+  border-radius: 0;
+  padding: 0 0;
+  font-family: FiraCode Nerd Font;
+  font-size: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
+  padding-bottom: 3px;
+}
 
 window#waybar {
-    background: #ffffff;
+  background: #fafafa;
 }
 
 #workspaces button {
-    padding: 2px 0px;
-    border-bottom: 2px;
-    color: #73d8ff;
-    border-color: #bbb;
-    border-style: solid;
-    margin-top:2px;
+  padding: 2px 0px;
+  border-bottom: 2px;
+  color: #73d8ff;
+  border-color: #fafafa;
+  border-style: solid;
+  margin-top: 2px;
 }
 
-
 #workspaces button.visible {
-    border-color: #323232;
+  border-color: #5c6773;
 }
 
 #workspaces button.focused {
-    border-color: #41a6d9;
+  border-color: #41a6d9;
 }
 
 #workspaces button.urgent {
-    border-color: #ff3333;
+  border-color: #ff3333;
 }
 
 #mode {
-    color: #f29718;
+  color: #f29718;
 }
 
-#clock, #cpu, #memory,#idle_inhibitor, #temperature,#custom-keyboard-layout, #backlight, #network, #pulseaudio, #mode, #tray, #window,#custom-launcher,#custom-power,#custom-pacman, #custom-load, #custom-swap, #disk, #battery, #custom-fan {
-    padding: 0 3px;
-    border-bottom: 2px;
-    border-style: solid;
+#clock,
+#cpu,
+#memory,
+#idle_inhibitor,
+#temperature,
+#custom-keyboard-layout,
+#backlight,
+#network,
+#pulseaudio,
+#mode,
+#tray,
+#window,
+#custom-launcher,
+#custom-power,
+#custom-pacman,
+#custom-load,
+#custom-swap,
+#disk,
+#battery,
+#custom-fan {
+  padding: 0 3px;
+  border-bottom: 2px;
+  border-style: solid;
 }
 
 /* -----------------------------------------------------------------------------
  * Module styles
  * -------------------------------------------------------------------------- */
 
-
 #clock {
- color:#86b300;
+  color: #86b300;
 }
 
 #backlight {
-    color: #f29718;
+  color: #f29718;
 }
 
 #battery {
-    color: #323232;
+  color: #323232;
 }
 
 #battery.charging {
-    color: #86b300;
+  color: #86b300;
 }
 
 @keyframes blink {
-    to {
-        color: #4c566a;
-        background-color: #eceff4;
-    }
+  to {
+    color: #4c566a;
+    background-color: #eceff4;
+  }
 }
 
 #battery.critical:not(.charging) {
-    background: #bf616a;
-    color: #eceff4;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  background: #bf616a;
+  color: #eceff4;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #cpu {
-    color:#86b300;
+  color: #86b300;
 }
 
 #memory {
-    color: #f07178;
+  color: #f07178;
 }
 
 #network.disabled {
-    color:#f07178;
+  color: #f07178;
 }
 
-#network{
-    color:#41a6d9;
+#network {
+  color: #41a6d9;
 }
 
 #network.disconnected {
-    color: #f07178;
+  color: #f07178;
 }
 
 #pulseaudio {
-    color: #86b300;
+  color: #86b300;
 }
 
 #pulseaudio.muted {
-    color: #323232;
+  color: #323232;
 }
 
 #temperature {
-    color: #41a6d9;
+  color: #41a6d9;
 }
 
 #temperature.critical {
-    color: #f07178;
+  color: #f07178;
 }
 
 #idle_inhibitor {
@@ -168,21 +184,22 @@ window#waybar {
 #tray {
 }
 
-#custom-launcher,#custom-power{
-    border-style: hidden;
-    margin-top:2px;
+#custom-launcher,
+#custom-power {
+  border-style: hidden;
+  margin-top: 2px;
 }
 
-#window{
-    border-style: hidden;
-    margin-top:1px;
+#window {
+  border-style: hidden;
+  margin-top: 1px;
 }
-#mode{
-    margin-bottom:3px;
+#mode {
+  margin-bottom: 3px;
 }
 
-#custom-keyboard-layout{
-   color:#d08770;
+#custom-keyboard-layout {
+  color: #d08770;
 }
 
 tooltip {
