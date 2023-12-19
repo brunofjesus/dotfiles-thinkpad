@@ -6,40 +6,10 @@
  *
  * =========================================================================== */
 
-/* -----------------------------------------------------------------------------
- * Keyframes
- * -------------------------------------------------------------------------- */
-
-/*
-Ayu
-background=#fafafa
-foreground=#5c6773
-regular0=#000000
-regular1=#ff3333
-regular2=#86b300
-regular3=#f29718
-regular4=#41a6d9
-regular5=#f07178
-regular6=#4dbf99
-regular7=#ffffff
-bright0=#323232
-bright1=#ff6565
-bright2=#b8e532
-bright3=#ffc94a
-bright4=#73d8ff
-bright5=#ffa3aa
-bright6=#7ff1cb
-bright7=#ffffff
-*/
-
-/* -----------------------------------------------------------------------------
- * Base styles
- * -------------------------------------------------------------------------- */
-
-/* Reset all styles */
+@import "mocha.css";
 
 * {
-  color: #323232;
+  color: @text;
   border: 0;
   border-radius: 0;
   padding: 0 0;
@@ -47,36 +17,36 @@ bright7=#ffffff
   font-size: 15px;
   margin-right: 5px;
   margin-left: 5px;
-  padding-bottom: 3px;
+  padding-bottom: 1px;
 }
 
 window#waybar {
-  background: #fafafa;
+  background: @base;
 }
 
 #workspaces button {
   padding: 2px 0px;
   border-bottom: 2px;
-  color: #73d8ff;
-  border-color: #fafafa;
+  color: @blue;
+  border-color: @overlay0;
   border-style: solid;
   margin-top: 2px;
 }
 
 #workspaces button.visible {
-  border-color: #5c6773;
+  border-color: @yellow;
 }
 
 #workspaces button.focused {
-  border-color: #41a6d9;
+  border-color: @blue;
 }
 
 #workspaces button.urgent {
-  border-color: #ff3333;
+  border-color: @red;
 }
 
 #mode {
-  color: #f29718;
+  color: @maroon;
 }
 
 #clock,
@@ -109,19 +79,19 @@ window#waybar {
  * -------------------------------------------------------------------------- */
 
 #clock {
-  color: #86b300;
+  color: @green;
 }
 
 #backlight {
-  color: #f29718;
+  color: @peach;
 }
 
 #battery {
-  color: #323232;
+  color: @green;
 }
 
 #battery.charging {
-  color: #86b300;
+  color: @yellow;
 }
 
 @keyframes blink {
@@ -132,8 +102,8 @@ window#waybar {
 }
 
 #battery.critical:not(.charging) {
-  background: #bf616a;
-  color: #eceff4;
+  background: @red;
+  color: @text;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -142,43 +112,43 @@ window#waybar {
 }
 
 #cpu {
-  color: #86b300;
+  color: @teal;
 }
 
 #memory {
-  color: #f07178;
+  color: @pink;
 }
 
 #network.disabled {
-  color: #f07178;
+  color: @red;
 }
 
 #network {
-  color: #41a6d9;
+  color: @yellow;
 }
 
 #network.disconnected {
-  color: #f07178;
+  color: @red;
 }
 
 #pulseaudio {
-  color: #86b300;
+  color: @flamingo;
 }
 
 #pulseaudio.muted {
-  color: #323232;
+  color: @subtext1;
 }
 
 #temperature {
-  color: #41a6d9;
+  color: @green;
 }
 
 #temperature.critical {
-  color: #f07178;
+  color: @marron;
 }
 
 #idle_inhibitor {
-  color: #f29718;
+  color: @yellow;
 }
 
 #tray {
@@ -199,19 +169,19 @@ window#waybar {
 }
 
 #custom-keyboard-layout {
-  color: #d08770;
+  color: @peach;
 }
 
 tooltip {
-  color: black;
-  background-color: white;
+  color: @text;
+  background-color: @crust;
   text-shadow: none;
   border-style: solid;
-  border-color: black;
-  border-width: 2px;
+  border-color: @overlay2;
+  border-width: 1px;
 }
 
 tooltip * {
-  color: black;
+  color: @text;
   text-shadow: none;
 }
