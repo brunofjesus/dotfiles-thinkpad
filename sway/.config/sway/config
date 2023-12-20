@@ -131,7 +131,8 @@ bindsym $mod+0 workspace $workspace10
 bindsym $mod+Shift+c reload
 
 # exit sway (logs you out of your X session)
-bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your X session.' -b 'Yes' 'swaymsg exit'"
+#bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your X session.' -b 'Yes' 'swaymsg exit'"
+bindsym $mod+Shift+e exec "$HOME/.config/sway/powermenu.sh"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
