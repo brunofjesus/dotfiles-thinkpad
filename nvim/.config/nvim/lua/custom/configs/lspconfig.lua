@@ -21,6 +21,15 @@ lspconfig.gopls.setup {
   }
 }
 
+lspconfig.templ.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "templ" },
+  flags = {
+    debounce_text_changes = 150,
+  }
+}
+
 local function ts_organize_imports()
   local params = {
     command = "_typescript.organizeImports",

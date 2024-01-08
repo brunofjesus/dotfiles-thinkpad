@@ -6,6 +6,7 @@ local plugins={
         "gopls",
         "gofumpt",
         "goimports-reviser",
+        "templ",
         "js-debug-adapter",
         "typescript-language-server",
         "eslint-lsp",
@@ -78,5 +79,9 @@ local plugins={
       vim.cmd [[silent! GoInstallDeps]]
     end,
   },
+  {
+    "tpope/vim-fugitive",
+     event = "VeryLazy",
+  }
 }
 return plugins
