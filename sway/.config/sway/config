@@ -15,6 +15,11 @@ set $term foot
 # font pango:FiraCode 11, Awesome 12
 font pango:FiraCode Nerd Font 9
 
+# Keyboard Layout
+input type:keyboard {
+  xkb_layout eu
+}
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -186,6 +191,7 @@ bindsym $mod+F2 exec swaylock -f -c000000 && systemctl suspend
 bindsym $mod+p exec wl-mirror LVDS-1
 
 # Execute the gnome keyring
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 
 # Execute this notification manager always:
