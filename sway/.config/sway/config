@@ -198,12 +198,6 @@ exec mako
 # Uncomment this if you want to set a static wallpaper:
 output "*" bg ~/.wallpaper.png fill
 
-
-# Disable the laptop output when the lid is closed
-#set $laptop_output eDP-1
-#bindswitch lid:on output $laptop_output disable
-#bindswitch lid:off output $laptop_output enable
-
 ######################################
 # APPLICATION SPECIFIC CONFIGURATION #
 ######################################
