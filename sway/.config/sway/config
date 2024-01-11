@@ -187,9 +187,6 @@ bindsym $mod+F1 exec swaylock -f -c000000
 bindsym $mod+F2 exec swaylock -f -c000000 && systemctl suspend
 #bindsym $mod+Shift+p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy
 
-# Meta+P to start the mirror
-bindsym $mod+p exec wl-mirror LVDS-1
-
 # Execute the gnome keyring
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
@@ -201,8 +198,6 @@ exec mako
 # Uncomment this if you want to set a static wallpaper:
 output "*" bg ~/.wallpaper.png fill
 
-# Fractional scaling
-output eDP-1 scale 1.8
 
 # Disable the laptop output when the lid is closed
 #set $laptop_output eDP-1
@@ -254,3 +249,4 @@ bindsym XF86MonBrightnessUp exec swayosd-client --brightness raise
 bindsym XF86MonBrightnessDown exec swayosd-client --brightness lower
 
 include /etc/sway/config.d/*
+include "$HOME/.config/sway/config.d/$(cat /etc/hostname)"
