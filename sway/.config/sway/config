@@ -1,4 +1,4 @@
-include catppuccin-mocha
+include catppuccin-latte
 
 set $mod Mod4
 
@@ -170,7 +170,7 @@ titlebar_border_thickness 0
 smart_borders on
 
 # target                 title     bg    text   indicator  border
-client.focused           $lavender $base     $peach $rosewater $lavender
+client.focused           $lavender $base     $blue $rosewater $lavender
 client.focused_inactive  $overlay0 $base     $text  $rosewater $overlay0
 client.unfocused         $overlay0 $overlay0 $text  $rosewater $overlay0
 client.urgent            $peach    $base     $peach $overlay0  $peach
