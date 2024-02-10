@@ -195,6 +195,9 @@ exec --no-startup-id gnome-keyring-daemon --start --components=pkcs11,secrets,ss
 # (does stop when started twice)
 exec mako
 
+# Execute Nextcloud
+exec --no-startup-id nextcloud
+
 # Uncomment this if you want to set a static wallpaper:
 output "*" bg ~/.wallpaper.png fill
 
