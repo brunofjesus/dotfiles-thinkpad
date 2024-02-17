@@ -29,6 +29,7 @@ export LS_COLORS="$(vivid generate catppuccin-latte)"
 
 alias vim="nvim"
 alias ls="lsd"
+alias ll="lsd -l"
 
 eval "$(starship init bash)"
 source /usr/share/nvm/init-nvm.sh
