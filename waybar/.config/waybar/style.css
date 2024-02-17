@@ -144,7 +144,8 @@ window#waybar {
 }
 
 #temperature.critical {
-  color: @marron;
+  color: @white;
+  background-color: @red;
 }
 
 #idle_inhibitor {
